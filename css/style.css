@@ -1444,6 +1444,7 @@ h1, h2, h3, h4 {
 }
 
 /* Premium WhatsApp Testimonial Card */
+/* Premium WhatsApp Testimonial Card */
 .whatsapp-testimonial-card {
     border: 1px solid rgba(37, 211, 102, 0.12);
 }
@@ -1454,17 +1455,17 @@ h1, h2, h3, h4 {
 }
 
 .whatsapp-testimonial-header {
-    padding: 28px 32px;
+    padding: 16px 24px; /* Reduced from 28px 32px */
     display: flex;
-    gap: 20px;
+    gap: 15px;
     align-items: center;
     border-bottom: 1px solid var(--color-border-glass);
     background: linear-gradient(180deg, rgba(37, 211, 102, 0.03) 0%, transparent 100%);
 }
 
 .whatsapp-badge-icon {
-    width: 48px;
-    height: 48px;
+    width: 38px; /* Reduced from 48px */
+    height: 38px; /* Reduced from 48px */
     border-radius: 50%;
     background-color: rgba(37, 211, 102, 0.08);
     color: #25D366;
@@ -1484,26 +1485,26 @@ h1, h2, h3, h4 {
 }
 
 .w-icon {
-    width: 26px;
-    height: 26px;
+    width: 20px; /* Reduced from 26px */
+    height: 20px; /* Reduced from 26px */
 }
 
 .whatsapp-testimonial-header h4 {
-    font-size: 1.05rem;
+    font-size: 0.95rem; /* Reduced from 1.05rem */
     color: var(--color-text-main);
     font-family: var(--font-heading);
     font-weight: 600;
 }
 
 .phone-subtitle-w {
-    font-size: 0.8rem;
+    font-size: 0.75rem; /* Reduced from 0.8rem */
     color: var(--color-text-sub);
-    margin-top: 4px;
-    line-height: 1.4;
+    margin-top: 2px;
+    line-height: 1.3;
 }
 
 .whatsapp-phone-mockup {
-    padding: 24px;
+    padding: 14px; /* Reduced from 24px */
     background-color: #01050e;
     display: flex;
     justify-content: center;
@@ -1513,7 +1514,10 @@ h1, h2, h3, h4 {
 
 .phone-mockup-img {
     max-width: 100%;
+    max-height: 250px; /* Reduced mockup height from auto to 250px */
     height: auto;
+    width: auto;
+    object-fit: contain;
     border-radius: 12px;
     border: 1px solid var(--color-border-glass-bright);
     box-shadow: var(--shadow-premium);
@@ -1524,12 +1528,16 @@ h1, h2, h3, h4 {
     transform: scale(1.015);
 }
 
+.whatsapp-testimonial-card .case-info-box {
+    padding: 18px 24px; /* Reduced from 32px */
+}
+
 .whatsapp-quote {
     font-style: italic;
     color: var(--color-text-main) !important;
     border-left: 3px solid #25D366;
     padding-left: 16px;
-    font-size: 0.95rem;
+    font-size: 0.88rem; /* Reduced from 0.95rem */
 }
 
 @media (max-width: 992px) {
@@ -2464,13 +2472,14 @@ h1, h2, h3, h4 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, rgba(4, 13, 29, 0.4) 0%, rgba(20, 48, 88, 0.15) 100%) !important;
-    border: 1px solid rgba(197, 168, 128, 0.18) !important;
-    padding: 35px 25px !important;
-    border-radius: 12px !important;
+    background: linear-gradient(135deg, rgba(8, 20, 42, 0.6) 0%, rgba(3, 8, 17, 0.95) 100%) !important;
+    border: 1px solid rgba(212, 175, 55, 0.45) !important; /* Glow gold border */
+    padding: 64px 40px !important; /* Significantly enlarged padding from 35px 25px */
+    border-radius: 20px !important; /* Smoother corner */
     margin-top: 30px;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-premium), 0 0 30px rgba(212, 175, 55, 0.22) !important; /* Premium gold outer glow */
 }
 
 .google-review-card::before {
@@ -2480,68 +2489,72 @@ h1, h2, h3, h4 {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(197, 168, 128, 0.04) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
     pointer-events: none;
     z-index: 0;
 }
 
 .google-review-icon {
-    width: 46px;
-    height: 46px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 68px !important; /* Enlarged from 46px */
+    height: 68px !important; /* Enlarged from 46px */
+    background: rgba(212, 175, 55, 0.1) !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 16px;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: var(--transition-fast);
+    margin-bottom: 24px !important;
+    color: var(--color-gold-bright) !important;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25) !important;
+    transition: var(--transition-smooth) !important;
     z-index: 1;
 }
 
 .google-review-card:hover .google-review-icon {
-    transform: scale(1.08);
-    background: rgba(197, 168, 128, 0.1);
-    border-color: rgba(197, 168, 128, 0.35);
-    color: var(--color-gold);
+    transform: scale(1.08) rotate(360deg);
+    background: var(--color-gold-bright) !important;
+    color: #01050e !important;
+    border-color: var(--color-gold-bright) !important;
+    box-shadow: var(--shadow-gold-glow) !important;
 }
 
 .g-icon {
-    width: 18px;
-    height: 18px;
+    width: 26px !important; /* Enlarged from 18px */
+    height: 26px !important; /* Enlarged from 18px */
 }
 
 .rating-stars {
     display: flex;
-    gap: 4px;
+    gap: 6px !important;
     justify-content: center;
-    margin-bottom: 12px;
+    margin-bottom: 18px !important;
     z-index: 1;
 }
 
 .star {
-    width: 15px;
-    height: 15px;
+    width: 22px !important; /* Enlarged from 15px */
+    height: 22px !important; /* Enlarged from 15px */
     color: #f59e0b;
-    filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.45));
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.75));
 }
 
 .google-review-title {
-    font-size: 1.05rem !important;
+    font-size: 1.5rem !important; /* Significantly enlarged from 1.05rem */
     font-family: var(--font-heading);
-    margin-bottom: 8px;
-    color: #fff;
-    font-weight: 700;
+    margin-bottom: 12px !important;
+    color: var(--color-gold-bright) !important; /* Changed to brilliant gold */
+    font-weight: 800 !important;
     z-index: 1;
 }
 
 .google-review-card p {
-    font-size: 0.8rem !important;
-    line-height: 1.45 !important;
+    font-size: 0.98rem !important; /* Enlarged from 0.8rem */
+    line-height: 1.6 !important;
     color: var(--color-text-sub) !important;
-    margin-bottom: 18px !important;
+    margin-bottom: 28px !important;
+    max-width: 480px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     z-index: 1;
 }
 
@@ -2550,13 +2563,24 @@ h1, h2, h3, h4 {
     justify-content: center;
     align-items: center;
     width: auto !important;
-    padding: 8px 18px !important;
-    font-size: 0.72rem !important;
+    padding: 12px 30px !important; /* Enlarged from 8px 18px */
+    font-size: 0.85rem !important; /* Enlarged from 0.72rem */
     font-weight: 700;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    background: var(--color-gold-bright) !important;
+    color: #01050e !important;
+    border-color: var(--color-gold-bright) !important;
+    border-radius: 12px !important;
     z-index: 1;
-    box-shadow: 0 4px 12px var(--color-gold-glow) !important;
+    box-shadow: var(--shadow-gold-glow), 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.btn-google-review:hover {
+    background: #e8c351 !important;
+    transform: translateY(-2px) scale(1.03) !important;
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5) !important;
 }
 
 /* Visitor Counter */
