@@ -141,84 +141,96 @@
                     <p class="section-subtitle">Independentemente do procedimento, seu caso é planejado sob medida, aliando segurança, precisão clínica e materiais de padrão internacional.</p>
                 </div>
 
-                <div class="specialties-grid">
+                <div class="specialties-carousel-wrapper">
+                    <button class="carousel-control prev" id="specialtiesPrev" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
                     
-                    <!-- Card 1 -->
-                    <div class="specialty-card">
-                        <div class="card-icon-box">
-                            <!-- Surgical Icon -->
-                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    <div class="specialties-carousel-track" id="specialtiesTrack">
+                        
+                        <!-- Card 1 -->
+                        <div class="specialty-card">
+                            <div class="card-icon-box">
+                                <!-- Surgical Icon -->
+                                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                            </div>
+                            <h3 class="specialty-title">Cirurgia oral menor</h3>
+                            <p class="specialty-desc">Extração de 3º molar (siso) e outros elementos com o máximo conforto pós-operatório. Técnicas cirúrgicas refinadas para uma cicatrização rápida e indolor.</p>
+                            <ul class="specialty-list">
+                                <li>Remoção segura de sisos inclusos</li>
+                                <li>Técnicas anestésicas avançadas</li>
+                                <li>Suporte pós-operatório 24h</li>
+                            </ul>
                         </div>
-                        <h3 class="specialty-title">Cirurgia oral menor</h3>
-                        <p class="specialty-desc">Extração de 3º molar (siso) e outros elementos com o máximo conforto pós-operatório. Técnicas cirúrgicas refinadas para uma cicatrização rápida e indolor.</p>
-                        <ul class="specialty-list">
-                            <li>Remoção segura de sisos inclusos</li>
-                            <li>Técnicas anestésicas avançadas</li>
-                            <li>Suporte pós-operatório 24h</li>
-                        </ul>
+
+                        <!-- Card 2 -->
+                        <div class="specialty-card">
+                            <div class="card-icon-box">
+                                <!-- Aesthetics / Teeth Icon -->
+                                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+                            </div>
+                            <h3 class="specialty-title">Facetas em resina</h3>
+                            <p class="specialty-desc">Harmonização estética e correções de formato ou cor com desgaste extremamente conservador, respeitando a estrutura natural do dente com acabamento ultra natural.</p>
+                            <ul class="specialty-list">
+                                <li>Alta fidelidade de cor e brilho</li>
+                                <li>Preservação máxima dos dentes</li>
+                                <li>Escultura manual e personalizada</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="specialty-card">
+                            <div class="card-icon-box">
+                                <!-- Implant Icon -->
+                                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 12 12 16.5 14.6 16.5 19.79"/><polyline points="12 22 12 12"/></svg>
+                            </div>
+                            <h3 class="specialty-title">Implantes dentários</h3>
+                            <p class="specialty-desc">Substituição de dentes perdidos com fixações firmes e modernas de titânio. Devolva a força completa à sua mastigação e melhore a sua estética.</p>
+                            <ul class="specialty-list">
+                                <li>Estabilidade e fixação impecáveis</li>
+                                <li>Prevenção da reabsorção óssea</li>
+                                <li>Resultados com excelente durabilidade</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="specialty-card">
+                            <div class="card-icon-box">
+                                <!-- Prosthesis Icon -->
+                                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12a4 4 0 1 0 8 0"/></svg>
+                            </div>
+                            <h3 class="specialty-title">Prótese dentária</h3>
+                            <p class="specialty-desc">Planejamento e reabilitação protética de alta precisão (coroas, pontes e dentaduras sobre implantes) para devolver a integridade funcional do seu sorriso.</p>
+                            <ul class="specialty-list">
+                                <li>Ajuste milimétrico e confortável</li>
+                                <li>Materiais biocompatíveis premium</li>
+                                <li>Restauração total da função de fala e mastigação</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="specialty-card">
+                            <div class="card-icon-box">
+                                <!-- General Clinical Icon -->
+                                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                            </div>
+                            <h3 class="specialty-title">Clínica geral & prevenção</h3>
+                            <p class="specialty-desc">Diagnósticos minuciosos, limpezas profiláticas de alta precisão e restaurações que mantêm a integridade geral e previnem problemas mais sérios.</p>
+                            <ul class="specialty-list">
+                                <li>Profilaxia e raspagem periodontal</li>
+                                <li>Restaurações estéticas de alta resina</li>
+                                <li>Avaliações completas periódicas</li>
+                            </ul>
+                        </div>
+
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="specialty-card">
-                        <div class="card-icon-box">
-                            <!-- Aesthetics / Teeth Icon -->
-                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
-                        </div>
-                        <h3 class="specialty-title">Facetas em resina</h3>
-                        <p class="specialty-desc">Harmonização estética e correções de formato ou cor com desgaste extremamente conservador, respeitando a estrutura natural do dente com acabamento ultra natural.</p>
-                        <ul class="specialty-list">
-                            <li>Alta fidelidade de cor e brilho</li>
-                            <li>Preservação máxima dos dentes</li>
-                            <li>Escultura manual e personalizada</li>
-                        </ul>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="specialty-card">
-                        <div class="card-icon-box">
-                            <!-- Implant Icon -->
-                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 12 12 16.5 14.6 16.5 19.79"/><polyline points="12 22 12 12"/></svg>
-                        </div>
-                        <h3 class="specialty-title">Implantes dentários</h3>
-                        <p class="specialty-desc">Substituição de dentes perdidos com fixações firmes e modernas de titânio. Devolva a força completa à sua mastigação e melhore a sua estética.</p>
-                        <ul class="specialty-list">
-                            <li>Estabilidade e fixação impecáveis</li>
-                            <li>Prevenção da reabsorção óssea</li>
-                            <li>Resultados com excelente durabilidade</li>
-                        </ul>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="specialty-card">
-                        <div class="card-icon-box">
-                            <!-- Prosthesis Icon -->
-                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12a4 4 0 1 0 8 0"/></svg>
-                        </div>
-                        <h3 class="specialty-title">Prótese dentária</h3>
-                        <p class="specialty-desc">Planejamento e reabilitação protética de alta precisão (coroas, pontes e dentaduras sobre implantes) para devolver a integridade funcional do seu sorriso.</p>
-                        <ul class="specialty-list">
-                            <li>Ajuste milimétrico e confortável</li>
-                            <li>Materiais biocompatíveis premium</li>
-                            <li>Restauração total da função de fala e mastigação</li>
-                        </ul>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="specialty-card">
-                        <div class="card-icon-box">
-                            <!-- General Clinical Icon -->
-                            <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                        </div>
-                        <h3 class="specialty-title">Clínica geral & prevenção</h3>
-                        <p class="specialty-desc">Diagnósticos minuciosos, limpezas profiláticas de alta precisão e restaurações que mantêm a integridade geral e previnem problemas mais sérios.</p>
-                        <ul class="specialty-list">
-                            <li>Profilaxia e raspagem periodontal</li>
-                            <li>Restaurações estéticas de alta resina</li>
-                            <li>Avaliações completas periódicas</li>
-                        </ul>
-                    </div>
-
+                    <button class="carousel-control next" id="specialtiesNext" aria-label="Próximo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
                 </div>
+                
+                <div class="carousel-dots" id="specialtiesDots"></div>
             </div>
         </section>
 

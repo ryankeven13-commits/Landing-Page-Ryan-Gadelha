@@ -864,11 +864,29 @@ h1, h2, h3, h4 {
     background-color: #020813;
 }
 
-.specialties-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 30px;
+.specialties-carousel-wrapper {
+    position: relative;
+    width: 100%;
     margin-top: 50px;
+}
+
+.specialties-carousel-track {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 0 25px 0; /* padding bottom to avoid clipping card shadows */
+}
+
+/* Hide scrollbar on the track */
+.specialties-carousel-track::-webkit-scrollbar {
+    display: none;
+}
+.specialties-carousel-track {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .specialty-card {
@@ -883,6 +901,89 @@ h1, h2, h3, h4 {
     flex-direction: column;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    flex: 0 0 calc(33.333% - 20px); /* 3 cards visible on desktop */
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+/* Controls */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: rgba(3, 8, 17, 0.7);
+    border: 1px solid var(--color-border-glass);
+    color: var(--color-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.carousel-control svg {
+    width: 24px;
+    height: 24px;
+}
+
+.carousel-control:hover {
+    background: var(--color-gold-bright);
+    color: #01050e;
+    border-color: var(--color-gold-bright);
+    box-shadow: var(--shadow-gold-glow);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-control.prev {
+    left: -70px;
+}
+
+.carousel-control.next {
+    right: -70px;
+}
+
+/* Pagination Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.carousel-dot:hover {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.carousel-dot.active {
+    background: var(--color-gold-bright);
+    width: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px var(--color-gold-bright);
+}
+
+/* Responsiveness for Track, Cards, and Controls */
+@media (max-width: 1200px) {
+    /* Hide arrows on smaller screens and rely on touch swipe + dots */
+    .carousel-control {
+        display: none;
+    }
 }
 
 .specialty-card::after {
@@ -1004,12 +1105,20 @@ h1, h2, h3, h4 {
     box-shadow: 0 0 6px var(--color-gold-bright);
 }
 
-@media (max-width: 576px) {
-    .specialties-grid {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 992px) {
     .specialty-card {
-        padding: 38px 28px;
+        flex: 0 0 calc(50% - 15px); /* 2 cards visible on tablets */
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .specialty-card {
+        flex: 0 0 100%; /* 1 card visible on mobile */
+        padding: 38px 24px;
+    }
+    .specialties-carousel-track {
+        gap: 20px;
     }
 }
 

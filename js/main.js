@@ -363,6 +363,124 @@ _Enviado através do Sistema de Agendamento da Landing Page._`;
 
         fetchVisits();
     }
+    
+    /* ----------------------------------------------------------------------
+       9. SPECIALTIES CAROUSEL INTERACTIVITY
+       ---------------------------------------------------------------------- */
+    const track = document.getElementById('specialtiesTrack');
+    const prevBtn = document.getElementById('specialtiesPrev');
+    const nextBtn = document.getElementById('specialtiesNext');
+    const dotsContainer = document.getElementById('specialtiesDots');
+    
+    if (track && dotsContainer) {
+        const cards = track.querySelectorAll('.specialty-card');
+        const totalCards = cards.length;
+        
+        // Generate dots
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalCards; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('data-index', i);
+            dotsContainer.appendChild(dot);
+        }
+        
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        
+        // Update active dot on scroll
+        const updateActiveDot = () => {
+            const scrollLeft = track.scrollLeft;
+            // Use the client width of the first card plus the gap to calculate the index
+            const cardWidth = cards[0].offsetWidth;
+            const gap = parseFloat(window.getComputedStyle(track).gap) || 30;
+            const stepWidth = cardWidth + gap;
+            
+            let activeIndex = Math.round(scrollLeft / stepWidth);
+            if (activeIndex >= totalCards) activeIndex = totalCards - 1;
+            if (activeIndex < 0) activeIndex = 0;
+            
+            dots.forEach((dot, idx) => {
+                if (idx === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        };
+        
+        // Use debounce or throttle to keep scroll handler light and performant
+        let scrollTimeout;
+        track.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(updateActiveDot);
+        });
+        
+        // Dots navigation
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const idx = parseInt(dot.getAttribute('data-index'));
+                const cardWidth = cards[0].offsetWidth;
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 30;
+                const stepWidth = cardWidth + gap;
+                
+                track.scrollTo({
+                    left: idx * stepWidth,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Next / Prev navigation
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                const cardWidth = cards[0].offsetWidth;
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 30;
+                const stepWidth = cardWidth + gap;
+                
+                // If at the end, wrap around to first card
+                const isAtEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 10;
+                if (isAtEnd) {
+                    track.scrollTo({
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    track.scrollBy({
+                        left: stepWidth,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                const cardWidth = cards[0].offsetWidth;
+                const gap = parseFloat(window.getComputedStyle(track).gap) || 30;
+                const stepWidth = cardWidth + gap;
+                
+                // If at the start, wrap around to last card
+                const isAtStart = track.scrollLeft <= 10;
+                if (isAtStart) {
+                    track.scrollTo({
+                        left: track.scrollWidth,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    track.scrollBy({
+                        left: -stepWidth,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+        
+        // Handle window resize dynamically
+        window.addEventListener('resize', updateActiveDot);
+    }
 
 });
 
