@@ -1628,8 +1628,8 @@ h1, h2, h3, h4 {
 }
 
 .specialty-select-btn {
-    background: rgba(197, 168, 128, 0.03);
-    border: 1px solid rgba(197, 168, 128, 0.35);
+    background: var(--color-gold-bright);
+    border: 1px solid var(--color-gold-bright);
     border-radius: 16px;
     padding: 20px 26px;
     display: flex;
@@ -1637,28 +1637,28 @@ h1, h2, h3, h4 {
     gap: 20px;
     cursor: pointer;
     text-align: left;
-    color: var(--color-gold-bright);
+    color: #01050e; /* Dark text for extreme readability */
     font-family: var(--font-heading);
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1.15rem;
+    font-weight: 750; /* very bold, highly visible */
     transition: var(--transition-medium);
     width: 100%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.1);
 }
 
 .specialty-select-btn:hover {
-    background: var(--color-gold-bright);
+    background: #e8c351; /* Brighter gold hover */
+    border-color: #e8c351;
     color: #01050e;
-    border-color: var(--color-gold-bright);
-    transform: translateY(-3px) scale(1.025);
-    box-shadow: var(--shadow-gold-glow), 0 8px 25px rgba(197, 168, 128, 0.15);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
 }
 
 .specialty-select-btn.active {
-    background: rgba(197, 168, 128, 0.12);
-    border-color: var(--color-gold-bright);
-    color: var(--color-gold-bright);
-    box-shadow: 0 0 20px rgba(197, 168, 128, 0.2);
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #01050e;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.35);
 }
 
 .specialty-btn-icon {
