@@ -253,53 +253,83 @@ _Enviado através do Sistema de Agendamento da Landing Page._`;
     }
 
     /* ----------------------------------------------------------------------
-       7. INTERACTIVE SPECIALTY SELECTOR FOR FACILITY CLINIC
+       7. INTERACTIVE SPECIALTY SELECTOR FOR FACILITY CLINIC (2-STEP FUNNEL)
        ---------------------------------------------------------------------- */
     const specialtyButtons = document.querySelectorAll('.specialty-select-btn');
     const bookingIframe = document.querySelector('.booking-iframe');
     const btnOpenNewWindow = document.getElementById('btnOpenNewWindow');
-    const bookingPlaceholder = document.getElementById('bookingPlaceholder');
-    const bookingWidgetCard = document.getElementById('bookingWidgetCard');
     
-    if (specialtyButtons.length > 0 && bookingIframe) {
+    const bookingStepSelection = document.getElementById('bookingStepSelection');
+    const bookingStepCalendar = document.getElementById('bookingStepCalendar');
+    const selectedProcedureName = document.getElementById('selectedProcedureName');
+    const btnBackToSelection = document.getElementById('btnBackToSelection');
+    
+    if (specialtyButtons.length > 0 && bookingIframe && bookingStepSelection && bookingStepCalendar) {
         const baseUrl = 'https://facilityclinic.com/agendamento/0f855fbd-1289-4da0-8d0a-662bf115b0cd';
         
         specialtyButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
-                e.preventDefault(); // Stop any default form submission/behaviors
+                e.preventDefault();
                 
-                // Remove active class from all buttons
-                specialtyButtons.forEach(b => b.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Get specialty value
+                // Get specialty value and name
                 const specialty = btn.getAttribute('data-specialty');
+                const specialtyText = btn.querySelector('.specialty-btn-text').textContent;
                 const specialtyValue = encodeURIComponent(specialty);
                 
-                // Create robust query params covering common names
+                // Create robust query params
                 const queryParams = `?obs=${specialtyValue}&observacao=${specialtyValue}&observacoes=${specialtyValue}&mensagem=${specialtyValue}&notes=${specialtyValue}&note=${specialtyValue}&comentario=${specialtyValue}`;
                 const newUrl = baseUrl + queryParams;
                 
-                // Update iframe source
+                // Update iframe source and name indicator
                 bookingIframe.src = newUrl;
+                if (selectedProcedureName) {
+                    selectedProcedureName.textContent = specialtyText;
+                }
                 
                 // Update "Open in new window" button link
                 if (btnOpenNewWindow) {
                     btnOpenNewWindow.href = newUrl;
-                    btnOpenNewWindow.style.display = 'inline-flex'; // Show the button!
+                    btnOpenNewWindow.style.display = 'inline-flex';
                 }
                 
-                // Hide placeholder and show the live calendar widget card smoothly
-                if (bookingPlaceholder) {
-                    bookingPlaceholder.style.display = 'none';
-                }
-                if (bookingWidgetCard) {
-                    bookingWidgetCard.style.display = 'block';
+                // Toggle active buttons
+                specialtyButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Transition between steps
+                bookingStepSelection.style.display = 'none';
+                bookingStepCalendar.style.display = 'block';
+                
+                // Smooth scroll to the top of the booking section to center calendar
+                const section = document.getElementById('agendamento');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
+        
+        // Back Button click handler
+        if (btnBackToSelection) {
+            btnBackToSelection.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Clear iframe to free memory and prevent background network calls
+                bookingIframe.src = '';
+                
+                // Reset buttons state
+                specialtyButtons.forEach(b => b.classList.remove('active'));
+                
+                // Transition back to selection
+                bookingStepCalendar.style.display = 'none';
+                bookingStepSelection.style.display = 'flex';
+                
+                // Smooth scroll back to booking section
+                const section = document.getElementById('agendamento');
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        }
     }
 
     /* ----------------------------------------------------------------------

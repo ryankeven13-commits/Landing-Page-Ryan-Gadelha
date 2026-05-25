@@ -1546,89 +1546,149 @@ h1, h2, h3, h4 {
     background-color: var(--color-bg-main);
 }
 
-.booking-container {
-    display: grid;
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: 80px;
-    align-items: center;
+.booking-container-flow {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.booking-intro {
+.booking-step-selection {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.booking-desc {
-    font-size: 1.15rem;
-    color: var(--color-text-sub);
+.booking-step-selection .booking-desc {
+    text-align: center;
     margin-bottom: 40px;
-    line-height: 1.6;
+}
+
+.booking-step-calendar {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.booking-active-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+#btnBackToSelection {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(197, 168, 128, 0.4);
+    color: var(--color-gold);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+#btnBackToSelection:hover {
+    background: var(--color-gold-bright);
+    color: #01050e;
+    border-color: var(--color-gold-bright);
+    box-shadow: var(--shadow-gold-glow);
+    transform: translateX(-4px);
+}
+
+.booking-selected-info {
+    font-size: 0.95rem;
+    color: var(--color-text-sub);
+    font-weight: 500;
+    background: rgba(197, 168, 128, 0.05);
+    border: 1px solid rgba(197, 168, 128, 0.25);
+    padding: 8px 18px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
 }
 
 /* Interactive Specialty Selector Panel */
 .specialty-selector-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 14px;
-    margin-top: 28px;
+    gap: 16px;
+    width: 100%;
+    max-width: 600px;
+    margin: 10px auto 0 auto;
 }
 
 .specialty-select-btn {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--color-border-glass-bright);
-    border-radius: 14px;
-    padding: 16px 22px;
+    background: rgba(197, 168, 128, 0.03);
+    border: 1px solid rgba(197, 168, 128, 0.35);
+    border-radius: 16px;
+    padding: 20px 26px;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 20px;
     cursor: pointer;
     text-align: left;
-    color: var(--color-text-main);
+    color: var(--color-gold-bright);
     font-family: var(--font-heading);
-    font-size: 0.98rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
     transition: var(--transition-medium);
     width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.03);
 }
 
 .specialty-select-btn:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(197, 168, 128, 0.4);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    background: var(--color-gold-bright);
+    color: #01050e;
+    border-color: var(--color-gold-bright);
+    transform: translateY(-3px) scale(1.025);
+    box-shadow: var(--shadow-gold-glow), 0 8px 25px rgba(197, 168, 128, 0.15);
 }
 
 .specialty-select-btn.active {
-    background: rgba(197, 168, 128, 0.08);
+    background: rgba(197, 168, 128, 0.12);
     border-color: var(--color-gold-bright);
     color: var(--color-gold-bright);
-    box-shadow: 0 0 20px rgba(197, 168, 128, 0.15);
+    box-shadow: 0 0 20px rgba(197, 168, 128, 0.2);
 }
 
 .specialty-btn-icon {
-    font-size: 1.35rem;
+    font-size: 1.45rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    filter: drop-shadow(0 2px 4px rgba(197, 168, 128, 0.3));
 }
 
 .specialty-btn-text {
     flex-grow: 1;
 }
 
-@media (max-width: 992px) {
-    .booking-container {
-        grid-template-columns: 1fr;
-        gap: 60px;
+@media (max-width: 768px) {
+    .booking-active-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        text-align: center;
     }
-    .specialty-selector-grid {
-        grid-template-columns: repeat(2, 1fr);
+    #btnBackToSelection {
+        justify-content: center;
     }
-}
-
-@media (max-width: 576px) {
-    .specialty-selector-grid {
-        grid-template-columns: 1fr;
+    .booking-selected-info {
+        text-align: center;
+    }
+    .specialty-select-btn {
+        padding: 16px 20px;
+        font-size: 1rem;
     }
 }
 

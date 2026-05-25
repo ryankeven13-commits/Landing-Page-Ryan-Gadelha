@@ -399,8 +399,10 @@
 
         <!-- Booking Section -->
         <section id="agendamento" class="section booking-section">
-            <div class="container booking-container">
-                <div class="booking-intro">
+            <div class="container booking-container-flow">
+                
+                <!-- STEP 1: Selection of Procedures -->
+                <div class="booking-step-selection" id="bookingStepSelection">
                     <span class="section-pretitle">Praticidade</span>
                     <h2 class="section-title-alt">Agende sua consulta <span class="highlight-gold">100% online</span></h2>
                     <p class="booking-desc">Para iniciar o seu agendamento, selecione o procedimento de seu interesse abaixo:</p>
@@ -428,36 +430,39 @@
                             <span class="specialty-btn-text">Clínica geral</span>
                         </button>
                     </div>
-
-                    <!-- Backup CTA Button (hidden initially) -->
-                    <a href="#" id="btnOpenNewWindow" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="margin-top: 32px; box-shadow: 0 4px 20px var(--color-gold-glow); display: none;">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                        Abrir agenda em nova janela
-                    </a>
                 </div>
 
-                <div class="booking-widget-wrapper">
-                    <!-- Placeholder Card (shown initially) -->
-                    <div class="booking-placeholder-card" id="bookingPlaceholder">
-                        <div class="placeholder-content">
-                            <div class="placeholder-icon-box">
-                                <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
-                            </div>
-                            <h3>Visualize a agenda</h3>
-                            <p>Selecione um procedimento ao lado para liberar os horários disponíveis do Dr. Ryan Gadelha e agendar online.</p>
+                <!-- STEP 2: Live Scheduling Calendar -->
+                <div class="booking-step-calendar" id="bookingStepCalendar" style="display: none;">
+                    <div class="booking-active-header">
+                        <button type="button" class="btn btn-outline btn-sm" id="btnBackToSelection">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 6px; display: inline-block; vertical-align: middle;"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                            Voltar para seleção
+                        </button>
+                        <div class="booking-selected-info">
+                            Procedimento selecionado: <span class="highlight-gold" id="selectedProcedureName">Nenhum</span>
                         </div>
                     </div>
 
-                    <!-- Live Iframe Card (hidden initially) -->
-                    <div class="booking-widget-card" id="bookingWidgetCard" style="display: none; padding: 0; overflow: hidden; min-height: 650px; border: 1px solid var(--color-border-glass); background: #030811; border-radius: 20px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);">
-                        <iframe 
-                            src="" 
-                            class="booking-iframe"
-                            title="Agendamento Online Facility Clinic"
-                            allow="payment">
-                        </iframe>
+                    <div class="booking-widget-wrapper">
+                        <!-- Live Iframe Card (loaded dynamically) -->
+                        <div class="booking-widget-card" id="bookingWidgetCard" style="display: block; padding: 0; overflow: hidden; min-height: 650px; border: 1px solid var(--color-border-glass); background: #030811; border-radius: 20px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);">
+                            <iframe 
+                                src="" 
+                                class="booking-iframe"
+                                title="Agendamento Online Facility Clinic"
+                                allow="payment">
+                            </iframe>
+                        </div>
+
+                        <!-- Backup CTA Button -->
+                        <a href="#" id="btnOpenNewWindow" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block" style="margin-top: 32px; box-shadow: 0 4px 20px var(--color-gold-glow); display: none;">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            Abrir agenda em nova janela
+                        </a>
                     </div>
                 </div>
+
             </div>
         </section>
 
