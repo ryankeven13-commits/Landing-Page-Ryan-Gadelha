@@ -666,7 +666,7 @@ h1, h2, h3, h4 {
 .phone-scroll-container {
     width: 26px;
     height: 44px;
-    border: 2px solid var(--color-border-glass-bright);
+    border: 2px solid rgba(255, 255, 255, 0.45);
     border-radius: 7px;
     position: relative;
     display: flex;
@@ -681,7 +681,7 @@ h1, h2, h3, h4 {
     top: 3px;
     width: 6px;
     height: 1.5px;
-    background-color: var(--color-border-glass-bright);
+    background-color: rgba(255, 255, 255, 0.45);
     border-radius: 1px;
 }
 
@@ -691,7 +691,7 @@ h1, h2, h3, h4 {
     bottom: 3px;
     width: 10px;
     height: 1.5px;
-    background-color: var(--color-border-glass-bright);
+    background-color: rgba(255, 255, 255, 0.45);
     border-radius: 1px;
 }
 
@@ -702,6 +702,12 @@ h1, h2, h3, h4 {
     color: var(--color-gold-bright);
     filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.45));
     animation: phoneScrollSwipe 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+.finger-swipe svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 /* Bottom Trust Badges Bar */
@@ -838,7 +844,7 @@ h1, h2, h3, h4 {
     }
     
     .scroll-indicator-wrapper {
-        display: none;
+        bottom: 15px;
     }
 }
 
