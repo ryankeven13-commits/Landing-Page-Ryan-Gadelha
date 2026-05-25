@@ -103,14 +103,14 @@ li {
 }
 
 .section {
-    padding: 120px 0;
+    padding: 70px 0;
     position: relative;
     z-index: 1;
 }
 
 @media (max-width: 768px) {
     .section {
-        padding: 85px 0;
+        padding: 45px 0;
     }
     .container {
         padding: 0 20px;
@@ -464,9 +464,9 @@ h1, h2, h3, h4 {
    6. HERO SECTION
    -------------------------------------------------------------------------- */
 .hero-section {
-    padding-top: calc(var(--header-height) + 40px);
-    padding-bottom: 120px;
-    min-height: 95vh;
+    padding-top: calc(var(--header-height) + 20px);
+    padding-bottom: 70px;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -690,8 +690,8 @@ h1, h2, h3, h4 {
 /* Bottom Trust Badges Bar */
 .hero-trust-bar {
     width: 100%;
-    margin-top: 100px;
-    padding: 30px 0;
+    margin-top: 40px;
+    padding: 24px 0;
     border-top: 1px solid var(--color-border-glass);
     border-bottom: 1px solid var(--color-border-glass);
     background: linear-gradient(90deg, rgba(1, 5, 14, 0) 0%, rgba(4, 13, 29, 0.45) 50%, rgba(1, 5, 14, 0) 100%);
@@ -1897,7 +1897,7 @@ h1, h2, h3, h4 {
    -------------------------------------------------------------------------- */
 .location-section {
     background-color: var(--color-bg-main);
-    padding: 100px 0;
+    padding: 60px 0;
     border-top: 1px solid var(--color-border-glass);
 }
 
@@ -2011,48 +2011,14 @@ h1, h2, h3, h4 {
 .footer {
     background-color: var(--color-bg-deep);
     border-top: 1px solid var(--color-border-glass);
-    padding: 100px 0 0;
+    padding: 60px 0 0;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.35fr 0.75fr 0.9fr;
+    grid-template-columns: 1fr 1fr;
     gap: 70px;
-    margin-bottom: 80px;
-}
-
-.footer-brand-side {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-logo {
-    height: 72px;
-    width: auto;
-    align-self: flex-start;
-    margin-bottom: 28px;
-}
-
-.brand-tagline {
-    font-size: 0.92rem;
-    color: var(--color-text-sub);
-    margin-bottom: 28px;
-    max-width: 340px;
-    line-height: 1.65;
-}
-
-.cro-badge {
-    display: inline-block;
-    align-self: flex-start;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--color-gold);
-    border: 1px solid rgba(197, 168, 128, 0.22);
-    background-color: rgba(197, 168, 128, 0.05);
-    padding: 7px 14px;
-    border-radius: 6px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    margin-bottom: 40px;
 }
 
 .footer-title {
