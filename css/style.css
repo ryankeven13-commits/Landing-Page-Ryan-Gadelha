@@ -2583,6 +2583,20 @@ h1, h2, h3, h4 {
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5) !important;
 }
 
+.google-review-card-full-width-wrapper {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    z-index: 2;
+}
+
+.google-review-card-full-width-wrapper .google-review-card {
+    width: 100% !important;
+    margin-top: 0 !important;
+}
+
 /* Visitor Counter */
 .footer-visitor-counter {
     display: inline-flex;
