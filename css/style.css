@@ -2286,3 +2286,166 @@ h1, h2, h3, h4 {
         transform: translateY(10px) scale(0.9);
     }
 }
+
+/* ==========================================================================
+   14. GOOGLE REVIEW CARD & VISITOR COUNTER STYLES
+   ========================================================================== */
+.google-review-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(4, 13, 29, 0.4) 0%, rgba(20, 48, 88, 0.15) 100%) !important;
+    border: 1px solid rgba(197, 168, 128, 0.18) !important;
+    padding: 35px 25px !important;
+    border-radius: 12px !important;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.google-review-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(197, 168, 128, 0.04) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.google-review-icon {
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: var(--transition-fast);
+    z-index: 1;
+}
+
+.google-review-card:hover .google-review-icon {
+    transform: scale(1.08);
+    background: rgba(197, 168, 128, 0.1);
+    border-color: rgba(197, 168, 128, 0.35);
+    color: var(--color-gold);
+}
+
+.g-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.rating-stars {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 12px;
+    z-index: 1;
+}
+
+.star {
+    width: 15px;
+    height: 15px;
+    color: #f59e0b;
+    filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.45));
+}
+
+.google-review-title {
+    font-size: 1.05rem !important;
+    font-family: var(--font-heading);
+    margin-bottom: 8px;
+    color: #fff;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.google-review-card p {
+    font-size: 0.8rem !important;
+    line-height: 1.45 !important;
+    color: var(--color-text-sub) !important;
+    margin-bottom: 18px !important;
+    z-index: 1;
+}
+
+.btn-google-review {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: auto !important;
+    padding: 8px 18px !important;
+    font-size: 0.72rem !important;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 1;
+    box-shadow: 0 4px 12px var(--color-gold-glow) !important;
+}
+
+/* Visitor Counter */
+.footer-visitor-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: var(--color-text-sub);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-fast);
+}
+
+.footer-visitor-counter:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981; /* Emerald Green */
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+    animation: counterPulse 2s infinite;
+}
+
+@keyframes counterPulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.counter-number {
+    font-weight: 700;
+    color: #fff;
+    font-family: var(--font-heading);
+}
+
+@media (max-width: 768px) {
+    .footer-bottom-flex {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+
