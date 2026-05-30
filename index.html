@@ -143,10 +143,23 @@
                         <!-- Card 1 -->
                         <div class="specialty-card">
                             <div class="card-icon-box">
-                                <!-- Surgical Icon -->
-                                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                                <!-- Surgical Icon - Dental Forceps & Tooth Extraction -->
+                                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <!-- Tooth outline inside the jaws -->
+                                    <path d="M10.8 5.5 C10.8 4, 11.2 3, 12 3 C12.8 3, 13.2 4, 13.2 5.5 C13.2 6.3, 12.7 7.2, 12.5 8 C12.4 8.5, 12 8.5, 12 7.5 C12 8.5, 11.6 8.5, 11.5 8 C11.3 7.2, 10.8 6.3, 10.8 5.5 Z" />
+                                    <!-- Forceps Left Beak -->
+                                    <path d="M9.5 9 C9.5 7.5, 10.2 6.5, 11.2 6.5" />
+                                    <!-- Forceps Right Beak -->
+                                    <path d="M14.5 9 C14.5 7.5, 13.8 6.5, 12.8 6.5" />
+                                    <!-- Joint/Pivot -->
+                                    <circle cx="12" cy="11.5" r="1.5" fill="currentColor" />
+                                    <!-- Forceps Left Handle -->
+                                    <path d="M10.8 12.5 C9.5 15, 8.5 18.5, 9.8 21 C10.2 21.8, 10.8 21.5, 11 20 C11.3 18.5, 11.8 15, 11.8 13" />
+                                    <!-- Forceps Right Handle -->
+                                    <path d="M13.2 12.5 C14.5 15, 15.5 18.5, 14.2 21 C13.8 21.8, 13.2 21.5, 13 20 C12.7 18.5, 12.2 15, 12.2 13" />
+                                </svg>
                             </div>
-                            <h3 class="specialty-title">Extração de siso e dentes</h3>
+                            <h3 class="specialty-title">Extração do siso (Queiro)</h3>
                             <p class="specialty-desc">Retirada segura do dente do siso e outros dentes com o máximo de conforto. Uso de técnicas modernas para uma cicatrização rápida e sem dor.</p>
                             <ul class="specialty-list">
                                 <li>Retirada segura de dentes que não nasceram (inclusos)</li>
@@ -201,6 +214,21 @@
                         </div>
 
                         <!-- Card 5 -->
+                        <div class="specialty-card">
+                            <div class="card-icon-box">
+                                <!-- Aesthetics / Whitening Icon (Sparkles) -->
+                                <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="m5 3 1 2.5L8.5 6 6 7 5 9.5 4 7 1.5 6 4 5.5 5 3Z"/><path d="m19 17 1 2.5 2.5.5-2.5 1-1 2.5-1-2.5-2.5-1 2.5-1 1-2.5Z"/></svg>
+                            </div>
+                            <h3 class="specialty-title">Rejuvenescimento Dental: Clareamento</h3>
+                            <p class="specialty-desc">Clareamento dental premium sob medida para remover manchas e recuperar a brancura natural do seu sorriso com total proteção à gengiva e máxima segurança.</p>
+                            <ul class="specialty-list">
+                                <li>Clareamento a laser de alta potência no consultório</li>
+                                <li>Moldeiras personalizadas com gel clareador seguro</li>
+                                <li>Fórmulas modernas com agentes dessensibilizantes</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 6 -->
                         <div class="specialty-card">
                             <div class="card-icon-box">
                                 <!-- General Clinical Icon -->
@@ -394,9 +422,9 @@
                     
                     <!-- Interactive Specialty Selector Grid -->
                     <div class="specialty-selector-grid">
-                        <button type="button" class="specialty-select-btn" data-specialty="realizar extração de siso e dentes">
+                        <button type="button" class="specialty-select-btn" data-specialty="realizar extração do siso (queiro)">
                             <span class="specialty-btn-icon">🦷</span>
-                            <span class="specialty-btn-text">Extração de siso e dentes</span>
+                            <span class="specialty-btn-text">Extração do siso (Queiro)</span>
                         </button>
                         <button type="button" class="specialty-select-btn" data-specialty="realizar facetas em resina">
                             <span class="specialty-btn-icon">✨</span>
@@ -409,6 +437,10 @@
                         <button type="button" class="specialty-select-btn" data-specialty="realizar prótese dentária">
                             <span class="specialty-btn-icon">👑</span>
                             <span class="specialty-btn-text">Prótese dentária</span>
+                        </button>
+                        <button type="button" class="specialty-select-btn" data-specialty="realizar rejuvenescimento dental: clareamento">
+                            <span class="specialty-btn-icon">💎</span>
+                            <span class="specialty-btn-text">Rejuvenescimento Dental: Clareamento</span>
                         </button>
                         <button type="button" class="specialty-select-btn" data-specialty="realizar consulta de clínica geral e limpeza">
                             <span class="specialty-btn-icon">🏥</span>
